@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Platform
   - Donut
+  - Background
+  - Curve
   layers:
   - Default
   - TransparentFX

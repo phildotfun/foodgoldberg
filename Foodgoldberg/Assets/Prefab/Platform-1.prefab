@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1117545696436853267
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -60249323227905221, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 873914552a6b347099dbc7b133fc272b, type: 2}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175772421199458413, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574349726422009493, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+      propertyPath: m_Name
+      value: Platform-1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+--- !u!1 &8753982029243653254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8574349726422009493, guid: 424558fcb3f14475aa4759491fee492a, type: 3}
+  m_PrefabInstance: {fileID: 1117545696436853267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &5809690993740151269
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753982029243653254}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.52, y: 0.72}
+    newSize: {x: 2.52, y: 0.72}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.0115615, y: 0.36611384}
+      - {x: -1.2355454, y: 0.21995153}
+      - {x: -1.26, y: -0.22999999}
+      - {x: -1.2456414, y: -0.17686763}
+      - {x: -0.94042385, y: 0.026779592}
+      - {x: -1.0699999, y: -0.35999998}
+      - {x: 1.0421792, y: -0.36611342}
+      - {x: 1.1927484, y: -0.23165846}
+      - {x: 1.2783415, y: 0.18165864}
+      - {x: 1.0410407, y: 0.35999998}

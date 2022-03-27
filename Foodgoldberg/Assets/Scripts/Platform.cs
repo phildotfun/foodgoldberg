@@ -1,27 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Platform : MonoBehaviour, ISelect
+
+//will run the awake & update method within the editor when something changes
+
+public class Platform : MonoBehaviour, IHoverable
 {
+    bool isHovering;
+    bool isRotating;
 
     public Sprite normal;
     public Sprite highlighted;
 
-    float rotSpeed = 20;
+    SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float rotSpeed = 1000;
+
+    void Awake()
     {
-        
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = normal;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (isHovering && Input.GetMouseButtonDown(0))
+        {
+            isRotating = true;
+        }
 
+        if (isRotating && !Input.GetMouseButton(0))
+        {
+            isRotating = false;
+        }
+
+        if (isRotating)
+        {
+            float rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
+            gameObject.transform.Rotate(Vector3.forward, -rotX);
+        }
+
+        if (isRotating || isHovering)
+        {
+            spriteRenderer.sprite = highlighted;
+        }
+        else
+        {
+            spriteRenderer.sprite = normal;
+        }
     }
-
 
     /// <summary>
     /// When mouse hover over platform, switch to highlight sprite.
@@ -29,22 +58,11 @@ public class Platform : MonoBehaviour, ISelect
     /// </summary>
     public void OnHover()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = highlighted;
-
-        void OnMouseDrag()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                float rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
-                gameObject.transform.Rotate(Vector2.up, rotX);
-            }
-        }
+        isHovering = true;
     }
 
-    public void OffHover()
+    public void OnHoverEnd()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = normal;
+        isHovering = false;
     }
-
-
 }

@@ -18,6 +18,8 @@ public class Platform : MonoBehaviour, IHoverable
 
     [SerializeField] float rotSpeed = 1000;
 
+    [SerializeField] AudioSource bounce;
+
     void Awake()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -65,4 +67,19 @@ public class Platform : MonoBehaviour, IHoverable
     {
         isHovering = false;
     }
+
+
+    //play bounce sound
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (gameObject.tag != "Curve")
+        {
+            if (collision.gameObject.tag == "Donut")
+            {
+                bounce.Play();
+            }
+        }
+ 
+    }
+
 }

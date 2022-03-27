@@ -16,14 +16,18 @@ public class Head : MonoBehaviour
     int scoreNum;
     int maxNum;
 
-    public GameObject finish;
-
     SpriteRenderer spriteRenderer;
+
+    //adds a mouth block, so the food can't get in
+    //if required points aren't met
+    [SerializeField] GameObject mouthBlock;
 
     void Awake()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = closed;
+
+        mouthBlock.SetActive(true);
 
         
     }
@@ -35,20 +39,20 @@ public class Head : MonoBehaviour
 
         scoreNum = int.Parse(score.text);
         maxNum = int.Parse(maxScore.text);
-
-        
-
      
         //if the donut bounces enough times
         //open mouth
         if (scoreNum >= maxNum)
         {
             spriteRenderer.sprite = open;
+            mouthBlock.SetActive(false);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             spriteRenderer.sprite = closed;
+            mouthBlock.SetActive(true);
         }
     }
 }

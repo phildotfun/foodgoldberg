@@ -8,6 +8,7 @@ public class Controller : MonoBehaviour
     public float rotSpeed = 10;
     GameObject lastHit;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,9 @@ public class Controller : MonoBehaviour
     void Update()
     {
 
-        SelectedObject();
+            SelectedObject();
+ 
+        
     }
 
     void SelectedObject()
@@ -30,7 +33,7 @@ public class Controller : MonoBehaviour
             lastHit = hit.transform.gameObject;
 
             //highlight the object
-            if (hit.collider.gameObject.tag == "Platform")
+            if (hit.collider.gameObject.tag == "Platform" || hit.collider.gameObject.tag == "Curve")
             {
                 hit.transform.gameObject.GetComponent<IHoverable>().OnHover();
             }

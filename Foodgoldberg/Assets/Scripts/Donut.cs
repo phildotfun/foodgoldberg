@@ -9,7 +9,9 @@ public class Donut : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] Text payerScore;
     [SerializeField] Text gameState;
-    [SerializeField] GameObject startPosition;
+    [SerializeField] GameObject tubePos;
+
+
    
 
     int score = 0;
@@ -33,9 +35,11 @@ public class Donut : MonoBehaviour
         //reset donut to original position when space is presssed
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.position = startPosition.transform.position;
+            transform.position = tubePos.transform.position;
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0;
+
+         
 
             score = 0;
             payerScore.text = "0";
@@ -62,6 +66,7 @@ public class Donut : MonoBehaviour
     //game manager will check the text and go into win mode
     public void OnTriggerEnter2D (Collider2D other)
     {
+
         if (other.gameObject.name == "Goal")
         {
             inGoal = "Win";
